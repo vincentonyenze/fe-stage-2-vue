@@ -1,188 +1,229 @@
 <template>
-  <div class="min-h-screen bg-linear-to-br from-indigo-50 to-blue-100 w-full">
-    <!-- Hero Section with Wavy Background -->
-    <div class="relative overflow-hidden min-h-screen flex items-center w-full">
-      <!-- Decorative Circles -->
-      <div
-        class="absolute top-20 left-10 w-32 h-32 bg-indigo-200 rounded-full opacity-60 z-0"
-      ></div>
-      <div class="absolute top-40 right-20 w-24 h-24 bg-blue-200 rounded-full opacity-40 z-0"></div>
-      <div
-        class="absolute bottom-20 left-1/4 w-16 h-16 bg-purple-200 rounded-full opacity-50 z-0"
-      ></div>
-
-      <!-- Hero Content -->
-      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10 flex justify-center">
-        <div class="text-center w-full">
-          <h1
-            class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight"
-          >
-            Welcome to
-            <span class="text-indigo-600 block sm:inline">TicketApp</span>
-          </h1>
-          <p
-            class="text-lg sm:text-xl lg:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed"
-          >
-            Streamline your ticket management with our powerful, intuitive platform. Create, track,
-            and resolve tickets with ease across your entire team.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+  <div class="min-h-screen bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-[#e2e8f0]">
+      <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center">
+            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+            <span class="ml-2 text-xl font-bold! text-gray-900">TicketApp</span>
+          </div>
+          <div class="flex space-x-4">
             <router-link
               to="/auth/login"
-              class="w-full sm:w-auto bg-indigo-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-indigo-700 transition-colors shadow-lg hover:shadow-xl"
+              class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium!"
             >
               Login
             </router-link>
             <router-link
               to="/auth/signup"
-              class="w-full sm:w-auto bg-white text-indigo-600 px-8 py-4 rounded-lg text-lg font-semibold border-2 border-indigo-600 hover:bg-indigo-50 transition-colors shadow-lg hover:shadow-xl"
+              class="bg-blue-600 text-white hover:bg-blue-700 px-4 py-2 rounded-md text-sm font-medium!"
             >
               Get Started
             </router-link>
           </div>
         </div>
       </div>
+    </nav>
 
-      <!-- Wavy Background SVG -->
-      <div class="absolute bottom-0 left-0 w-full">
-        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="w-full h-20 fill-white">
-          <path
-            d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
-          ></path>
-        </svg>
-      </div>
-    </div>
-
-    <!-- Features Section -->
-    <div class="py-20 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Powerful Features
-          </h2>
-          <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-            Everything you need to manage tickets efficiently
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden flex justify-center items-center">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="text-center">
+          <h1 class="text-4xl md:text-6xl font-bold! text-gray-900 mb-6">
+            Streamline Your
+            <span class="text-blue-600 font-bold!"> Ticket Management</span>
+          </h1>
+          <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto py-5">
+            A powerful, intuitive platform to manage support tickets, track
+            progress, and deliver exceptional customer service across your
+            organization.
           </p>
-        </div>
-
-        <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
-          <!-- Feature Card 1 -->
-          <div
-            class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:scale-105"
-          >
-            <div class="w-16 h-16 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
-              <svg
-                class="w-8 h-8 text-indigo-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                ></path>
-              </svg>
-            </div>
-            <h3 class="text-xl font-semibold text-gray-900 mb-4">Easy Ticket Creation</h3>
-            <p class="text-gray-600 leading-relaxed">
-              Create tickets quickly with our intuitive form and smart validation system.
-            </p>
-          </div>
-
-          <!-- Feature Card 2 -->
-          <div
-            class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:scale-105"
-          >
-            <div class="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mb-6">
-              <svg
-                class="w-8 h-8 text-green-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                ></path>
-              </svg>
-            </div>
-            <h3 class="text-xl font-semibold text-gray-900 mb-4">Real-time Tracking</h3>
-            <p class="text-gray-600 leading-relaxed">
-              Track ticket status in real-time with our comprehensive dashboard and analytics.
-            </p>
-          </div>
-
-          <!-- Feature Card 3 -->
-          <div
-            class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:scale-105"
-          >
-            <div class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
-              <svg
-                class="w-8 h-8 text-purple-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4"
-                ></path>
-              </svg>
-            </div>
-            <h3 class="text-xl font-semibold text-gray-900 mb-4">Advanced Management</h3>
-            <p class="text-gray-600 leading-relaxed">
-              Edit, update, and manage tickets with our full-featured CRUD operations.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- CTA Section -->
-    <div class="py-20 bg-indigo-600">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-            Ready to Get Started?
-          </h2>
-          <p class="text-lg sm:text-xl text-indigo-100 mb-12 leading-relaxed">
-            Join thousands of teams already using TicketApp to manage their workflow.
-          </p>
-          <div class="flex justify-center">
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <router-link
               to="/auth/signup"
-              class="inline-block bg-white text-indigo-600 px-10 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl transform hover:scale-105"
+              class="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium! rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors"
             >
-              Start Free Trial
+              Get Started
+              <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </router-link>
+            <router-link
+              to="/auth/login"
+              class="inline-flex items-center px-8 py-3 border border-gray-300 text-base font-medium! rounded-md text-gray-700 bg-white hover:bg-gray-50 transition-colors"
+            >
+              Login
             </router-link>
           </div>
         </div>
       </div>
-    </div>
+
+      <!-- Decorative Circle -->
+      <div class="absolute top-20 right-10 hidden lg:block">
+        <div class="w-32 h-32 opacity-60">
+          <svg viewBox="0 0 200 200" class="w-full h-full">
+            <circle
+              cx="100"
+              cy="100"
+              r="80"
+              fill="#3B82F6"
+              fill-opacity="0.1"
+              stroke="#3B82F6"
+              stroke-width="2"
+              stroke-opacity="0.3"
+            />
+            <circle
+              cx="100"
+              cy="100"
+              r="60"
+              fill="#3B82F6"
+              fill-opacity="0.05"
+            />
+            <circle
+              cx="100"
+              cy="100"
+              r="40"
+              fill="#3B82F6"
+              fill-opacity="0.1"
+            />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Wavy Background -->
+      <div class="absolute bottom-0 left-0 w-full">
+        <svg viewBox="0 0 1440 320" class="w-full h-32">
+          <path
+            fill="#3B82F6"
+            fill-opacity="0.1"
+            d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,208C1248,224,1344,192,1392,176L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+          ></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-white relative">
+      <!-- Second Decorative Circle -->
+      <div class="absolute top-10 left-10 hidden lg:block">
+        <div class="w-24 h-24 opacity-40">
+          <svg viewBox="0 0 200 200" class="w-full h-full">
+            <circle
+              cx="100"
+              cy="100"
+              r="60"
+              fill="#10B981"
+              fill-opacity="0.1"
+              stroke="#10B981"
+              stroke-width="1"
+              stroke-opacity="0.2"
+            />
+            <circle
+              cx="100"
+              cy="100"
+              r="40"
+              fill="#10B981"
+              fill-opacity="0.05"
+            />
+          </svg>
+        </div>
+      </div>
+      <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 py-10">
+          <h2 class="text-3xl font-bold! text-gray-900 mb-4">
+            Everything you need to manage tickets
+          </h2>
+          <p class="text-xl text-gray-600 pt-3">
+            Powerful features designed to streamline your workflow
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
+            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold! text-gray-900 mb-4">
+              Smart Ticket Management
+            </h3>
+            <p class="text-gray-600">
+              Create, assign, and track tickets with ease. Our intuitive
+              interface makes ticket management simple and efficient.
+            </p>
+          </div>
+
+          <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
+            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold! text-gray-900 mb-4">
+              Team Collaboration
+            </h3>
+            <p class="text-gray-600">
+              Work together seamlessly with your team. Assign tickets, add
+              comments, and keep everyone in the loop.
+            </p>
+          </div>
+
+          <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
+            <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold! text-gray-900 mb-4">
+              Analytics & Insights
+            </h3>
+            <p class="text-gray-600">
+              Get valuable insights into your ticket performance with detailed
+              analytics and reporting tools.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-blue-600">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold! text-white mb-4">
+          Ready to get started?
+        </h2>
+        <p class="text-xl text-blue-100 mb-8 py-4">
+          Join thousands of teams already using TicketApp to manage their
+          support tickets.
+        </p>
+        <router-link
+          to="/auth/signup"
+          class="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium! rounded-md text-blue-600 bg-white hover:bg-gray-50 transition-colors"
+        >
+          Start Free Trial
+          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </router-link>
+      </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-16">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center">
-          <h3 class="text-3xl font-bold mb-6">TicketApp</h3>
-          <p class="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
-            Streamline your ticket management workflow
-          </p>
-          <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-8">
-            <a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" class="text-gray-400 hover:text-white transition-colors"
-              >Terms of Service</a
-            >
-            <a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a>
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="flex items-center mb-4 md:mb-0">
+            <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+            <span class="ml-2 text-xl font-bold!">TicketApp</span>
           </div>
-          <div class="mt-12 pt-8 border-t border-gray-800">
-            <p class="text-gray-400">&copy; 2024 TicketApp. All rights reserved.</p>
+          <div class="text-gray-400">
+            © 2025 TicketApp by Vincent. All rights reserved.
           </div>
         </div>
       </div>

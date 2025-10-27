@@ -2,17 +2,17 @@
   <MainLayout>
     <div>
       <!-- Header -->
-      <div class="mb-8">
+      <div class="mb-8!">
         <div class="flex items-center justify-between">
           <div>
-            <h1 class="text-3xl font-bold text-gray-900">Ticket Management</h1>
-            <p class="mt-2 text-gray-600">Create, view, edit, and manage your tickets</p>
+            <h1 class="text-3xl font-bold! text-gray-900">Ticket Management</h1>
+            <p class="mt-2! text-gray-600">Create, view, edit, and manage your tickets</p>
           </div>
           <button
             @click="openCreateModal"
-            class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium! rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
           >
-            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-4 h-4 mr-2!" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -26,27 +26,27 @@
       </div>
 
       <!-- Filters -->
-      <div class="bg-white shadow rounded-lg mb-6">
+      <div class="bg-white shadow rounded-lg mb-6!">
         <div class="px-4 py-5 sm:p-6">
           <div class="flex flex-col sm:flex-row gap-4">
             <div class="flex-1">
-              <label for="search" class="block text-sm font-medium text-gray-700">Search</label>
+              <label for="search" class="block text-sm font-medium! text-gray-700">Search</label>
               <input
                 id="search"
                 v-model="searchQuery"
                 type="text"
                 placeholder="Search tickets..."
-                class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                class="mt-1! block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               />
             </div>
             <div>
-              <label for="statusFilter" class="block text-sm font-medium text-gray-700"
+              <label for="statusFilter" class="block text-sm font-medium! text-gray-700"
                 >Status</label
               >
               <select
                 id="statusFilter"
                 v-model="statusFilter"
-                class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                class="mt-1! block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               >
                 <option value="">All Status</option>
                 <option value="open">Open</option>
@@ -74,19 +74,19 @@
               d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
             ></path>
           </svg>
-          <h3 class="mt-2 text-sm font-medium text-gray-900">No tickets found</h3>
-          <p class="mt-1 text-sm text-gray-500">Get started by creating a new ticket.</p>
+          <h3 class="mt-2! text-sm font-medium! text-gray-900">No tickets found</h3>
+          <p class="mt-1! text-sm text-gray-500">Get started by creating a new ticket.</p>
         </div>
 
         <div v-else class="divide-y divide-gray-200">
           <div v-for="ticket in filteredTickets" :key="ticket.id" class="p-6 hover:bg-gray-50">
             <div class="flex items-center justify-between">
               <div class="flex-1">
-                <h3 class="text-lg font-medium text-gray-900">{{ ticket.title }}</h3>
-                <p class="mt-1 text-sm text-gray-500">
+                <h3 class="text-lg font-medium! text-gray-900">{{ ticket.title }}</h3>
+                <p class="mt-1! text-sm text-gray-500">
                   {{ ticket.description || 'No description' }}
                 </p>
-                <div class="mt-2 flex items-center space-x-4 text-sm text-gray-500">
+                <div class="mt-2! flex items-center space-x-4 text-sm text-gray-500">
                   <span>Created: {{ formatDate(ticket.createdAt) }}</span>
                   <span v-if="ticket.priority" class="capitalize"
                     >Priority: {{ ticket.priority }}</span
@@ -95,7 +95,7 @@
               </div>
               <div class="flex items-center space-x-4">
                 <span
-                  class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium"
+                  class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium!"
                   :class="getStatusClasses(ticket.status)"
                 >
                   {{ ticket.status.replace('_', ' ') }}
@@ -103,13 +103,13 @@
                 <div class="flex space-x-2">
                   <button
                     @click="openEditModal(ticket)"
-                    class="text-indigo-600 hover:text-indigo-900 text-sm font-medium"
+                    class="text-blue-600 hover:text-blue-900 text-sm font-medium!"
                   >
                     Edit
                   </button>
                   <button
                     @click="confirmDelete(ticket)"
-                    class="text-red-600 hover:text-red-900 text-sm font-medium"
+                    class="text-red-600 hover:text-red-900 text-sm font-medium!"
                   >
                     Delete
                   </button>
@@ -130,49 +130,49 @@
           class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white"
           @click.stop
         >
-          <div class="mt-3">
-            <h3 class="text-lg font-medium text-gray-900 mb-4">
+          <div class="mt-3!">
+            <h3 class="text-lg font-medium! text-gray-900 mb-4!">
               {{ isEditing ? 'Edit Ticket' : 'Create New Ticket' }}
             </h3>
 
             <form @submit.prevent="handleSubmit">
               <div class="space-y-4">
                 <div>
-                  <label for="title" class="block text-sm font-medium text-gray-700">Title *</label>
+                  <label for="title" class="block text-sm font-medium! text-gray-700">Title *</label>
                   <input
                     id="title"
                     v-model="form.title"
                     type="text"
                     required
-                    class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    class="mt-1! block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                     :class="{ 'border-red-500': errors.title }"
                     placeholder="Enter ticket title"
                   />
-                  <p v-if="errors.title" class="mt-1 text-sm text-red-600">{{ errors.title }}</p>
+                  <p v-if="errors.title" class="mt-1! text-sm text-red-600">{{ errors.title }}</p>
                 </div>
 
                 <div>
-                  <label for="description" class="block text-sm font-medium text-gray-700"
+                  <label for="description" class="block text-sm font-medium! text-gray-700"
                     >Description</label
                   >
                   <textarea
                     id="description"
                     v-model="form.description"
                     rows="3"
-                    class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    class="mt-1! block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                     placeholder="Enter ticket description"
                   ></textarea>
                 </div>
 
                 <div>
-                  <label for="status" class="block text-sm font-medium text-gray-700"
+                  <label for="status" class="block text-sm font-medium! text-gray-700"
                     >Status *</label
                   >
                   <select
                     id="status"
                     v-model="form.status"
                     required
-                    class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                     :class="{ 'border-red-500': errors.status }"
                   >
                     <option value="">Select status</option>
@@ -180,17 +180,17 @@
                     <option value="in_progress">In Progress</option>
                     <option value="closed">Closed</option>
                   </select>
-                  <p v-if="errors.status" class="mt-1 text-sm text-red-600">{{ errors.status }}</p>
+                  <p v-if="errors.status" class="mt-1! text-sm text-red-600">{{ errors.status }}</p>
                 </div>
 
                 <div>
-                  <label for="priority" class="block text-sm font-medium text-gray-700"
+                  <label for="priority" class="block text-sm font-medium! text-gray-700"
                     >Priority</label
                   >
                   <select
                     id="priority"
                     v-model="form.priority"
-                    class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    class="mt-1! block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                   >
                     <option value="">Select priority</option>
                     <option value="low">Low</option>
@@ -200,18 +200,18 @@
                 </div>
               </div>
 
-              <div class="flex justify-end space-x-3 mt-6">
+              <div class="flex justify-end space-x-3 mt-6!">
                 <button
                   type="button"
                   @click="closeModal"
-                  class="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50"
+                  class="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium! text-gray-700 hover:bg-gray-50"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
                   :disabled="loading"
-                  class="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50"
+                  class="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium! text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50"
                 >
                   {{ loading ? 'Saving...' : isEditing ? 'Update' : 'Create' }}
                 </button>
@@ -231,7 +231,7 @@
           class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white"
           @click.stop
         >
-          <div class="mt-3 text-center">
+          <div class="mt-3! text-center">
             <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-red-100">
               <svg
                 class="h-6 w-6 text-red-600"
@@ -247,24 +247,24 @@
                 ></path>
               </svg>
             </div>
-            <h3 class="text-lg font-medium text-gray-900 mt-4">Delete Ticket</h3>
-            <div class="mt-2">
+            <h3 class="text-lg font-medium! text-gray-900 mt-4!">Delete Ticket</h3>
+            <div class="mt-2!">
               <p class="text-sm text-gray-500">
                 Are you sure you want to delete "{{ ticketToDelete?.title }}"? This action cannot be
                 undone.
               </p>
             </div>
-            <div class="flex justify-center space-x-3 mt-6">
+            <div class="flex justify-center space-x-3 mt-6!">
               <button
                 @click="closeDeleteModal"
-                class="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50"
+                class="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium! text-gray-700 hover:bg-gray-50"
               >
                 Cancel
               </button>
               <button
                 @click="handleDelete"
                 :disabled="loading"
-                class="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 disabled:opacity-50"
+                class="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium! text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 disabled:opacity-50"
               >
                 {{ loading ? 'Deleting...' : 'Delete' }}
               </button>
