@@ -75,13 +75,21 @@ export const useTicketsStore = defineStore('tickets', () => {
   const updateTicket = (id: string, updates: Partial<Omit<Ticket, 'id' | 'createdAt'>>) => {
     const index = tickets.value.findIndex((ticket) => ticket.id === id)
     if (index !== -1) {
-      tickets.value[index] = {
-        ...tickets.value[index],
-        ...updates,
+      const currentTicket = tickets.value[index]
+      if (!currentTicket) return null
+
+      const updatedTicket: Ticket = {
+        id: currentTicket.id,
+        title: updates.title ?? currentTicket.title,
+        description: updates.description ?? currentTicket.description,
+        status: updates.status ?? currentTicket.status,
+        priority: updates.priority ?? currentTicket.priority,
+        createdAt: currentTicket.createdAt,
         updatedAt: new Date().toISOString(),
       }
+      tickets.value[index] = updatedTicket
       saveTickets()
-      return tickets.value[index]
+      return updatedTicket
     }
     return null
   }

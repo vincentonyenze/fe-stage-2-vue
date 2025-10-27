@@ -48,7 +48,7 @@ export const useAuthStore = defineStore('auth', () => {
     localStorage.setItem('ticketapp_session', mockToken)
     localStorage.setItem('ticketapp_user', JSON.stringify(mockUser))
 
-    return { success: true }
+    return { success: true, error: undefined }
   }
 
   const logout = () => {
